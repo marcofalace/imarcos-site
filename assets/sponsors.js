@@ -1,71 +1,105 @@
 /*
-  ELENCO SPONSOR
-  ----------------
-  Lascia vuoto finché non ci sono sponsor da pubblicare.
-  Quando arrivano i dati, aggiungi un oggetto per ogni attività.
+  SPONSOR DI LAPPANO IN PASSERELLA
+  --------------------------------
+  Per ogni sponsor servono:
+  - name: nome dell'attività, usato anche per l'accessibilità;
+  - poster: percorso della locandina caricata in assets/sponsors/;
+  - url: link completo alla pagina social;
+  - cta: facoltativo. Se omesso, il testo viene scelto in base al link.
 
   Esempio:
   {
-    name: "Nome del negozio",
-    category: "Abbigliamento bambini",
-    logo: "../assets/sponsors/nome-logo.png",
-    url: "https://www.instagram.com/...",
-    level: "protagonista", // protagonista | ufficiale | tecnico
-    offer: "10% di sconto nella settimana dell'evento",
-    cta: "Visita il negozio"
+    name: "Nome attività",
+    poster: "../assets/sponsors/nome-attivita.jpg",
+    url: "https://www.instagram.com/nomeattivita/"
   }
 */
 window.LAPPANO_SPONSORS = [];
 
 (function renderSponsors() {
-  const sponsors = Array.isArray(window.LAPPANO_SPONSORS) ? window.LAPPANO_SPONSORS : [];
-  const emptyState = document.getElementById('sponsor-empty');
-  const groupMap = {
-    protagonista: {
-      section: document.getElementById('group-protagonista'),
-      grid: document.getElementById('grid-protagonista')
-    },
-    ufficiale: {
-      section: document.getElementById('group-ufficiale'),
-      grid: document.getElementById('grid-ufficiale')
-    },
-    tecnico: {
-      section: document.getElementById('group-tecnico'),
-      grid: document.getElementById('grid-tecnico')
-    }
-  };
+  'use strict';
 
-  if (!sponsors.length) {
+  const sponsors = Array.isArray(window.LAPPANO_SPONSORS)
+    ? window.LAPPANO_SPONSORS
+    : [];
+
+  const grid = document.getElementById('sponsor-grid');
+  const emptyState = document.getElementById('sponsor-empty');
+
+  if (!grid || !emptyState) return;
+
+  if (sponsors.length === 0) {
     emptyState.hidden = false;
     return;
   }
 
   emptyState.hidden = true;
 
+  const getButtonLabel = (sponsor) => {
+    if (sponsor.cta) return String(sponsor.cta);
+
+    try {
+      const hostname = new URL(String(sponsor.url)).hostname.toLowerCase();
+      if (hostname.includes('instagram.com')) return 'Apri su Instagram';
+      if (hostname.includes('facebook.com') || hostname.includes('fb.com')) return 'Apri su Facebook';
+      if (hostname.includes('tiktok.com')) return 'Apri su TikTok';
+    } catch (_) {
+      // In caso di URL non valido, usa il testo generico.
+    }
+
+    return 'Visita la pagina social';
+  };
+
   sponsors.forEach((sponsor) => {
-    const level = groupMap[sponsor.level] ? sponsor.level : 'ufficiale';
-    const target = groupMap[level];
-    target.section.hidden = false;
+    if (!sponsor || !sponsor.poster || !sponsor.url) return;
+
+    const name = String(sponsor.name || 'Attività sponsor');
+    const url = String(sponsor.url);
 
     const card = document.createElement('article');
-    card.className = 'sponsor-card';
+    card.className = 'poster-card';
 
-    const safeName = String(sponsor.name || 'Sponsor');
-    const safeCategory = String(sponsor.category || 'Partner dell’evento');
-    const safeCta = String(sponsor.cta || 'Scopri l’attività');
+    const posterLink = document.createElement('a');
+    posterLink.className = 'poster-link';
+    posterLink.href = url;
+    posterLink.target = '_blank';
+    posterLink.rel = 'noopener noreferrer';
+    posterLink.setAttribute('aria-label', `Visita la pagina social di ${name}`);
 
-    card.innerHTML = `
-      <div class="sponsor-logo-box">
-        <img src="${sponsor.logo}" alt="Logo ${safeName}" loading="lazy" decoding="async">
-      </div>
-      <div class="sponsor-meta">
-        <h3>${safeName}</h3>
-        <p class="sponsor-category">${safeCategory}</p>
-        ${sponsor.offer ? `<p class="sponsor-offer">${String(sponsor.offer)}</p>` : ''}
-      </div>
-      <a class="button secondary" href="${sponsor.url}" target="_blank" rel="noopener noreferrer">${safeCta}</a>
-    `;
+    const frame = document.createElement('div');
+    frame.className = 'poster-frame';
 
-    target.grid.appendChild(card);
+    const image = document.createElement('img');
+    image.src = String(sponsor.poster);
+    image.alt = `Locandina sponsor: ${name}`;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+
+    frame.appendChild(image);
+    posterLink.appendChild(frame);
+
+    const meta = document.createElement('div');
+    meta.className = 'poster-meta';
+
+    const heading = document.createElement('h3');
+    heading.textContent = name;
+
+    const button = document.createElement('a');
+    button.className = 'button secondary';
+    button.href = url;
+    button.target = '_blank';
+    button.rel = 'noopener noreferrer';
+    button.textContent = getButtonLabel(sponsor);
+
+    meta.appendChild(heading);
+    meta.appendChild(button);
+
+    card.appendChild(posterLink);
+    card.appendChild(meta);
+    grid.appendChild(card);
   });
+
+  if (grid.children.length === 0) {
+    emptyState.hidden = false;
+  }
 })();
