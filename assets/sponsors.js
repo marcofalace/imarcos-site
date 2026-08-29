@@ -114,7 +114,102 @@ window.LAPPANO_SPONSORS = [
     poster: "../assets/sponsors/arte-del-capello.png",
     url: "https://www.instagram.com/domenico.cristiano.94/"
   }
-];
+,
+  {
+    name: "I Nodi di Penelope",
+    poster: "../assets/sponsors/i-nodi-di-penelope.jpeg",
+    url: "https://www.instagram.com/i_nodi_di_penelope"
+  },
+  {
+    name: "Framada da Zio Rosario",
+    poster: "../assets/sponsors/framada-da-zio-rosario.jpeg",
+    url: "https://www.instagram.com/pizzeriaframada?igsi=MXJvZGhocHp0emIzMg=="
+  },
+  {
+    name: "Modà",
+    poster: "../assets/sponsors/moda.jpeg",
+    url: "https://www.instagram.com/moda_e_cocktaileria?igsi=MWlpaXhzeXZnNXA2ZQ=="
+  },
+  {
+    name: "Rizzo Pasticceri",
+    poster: "../assets/sponsors/rizzo-pasticceri.jpeg",
+    url: "https://www.instagram.com/rizzopasticceri?igsi=NGcydmsyMzYxcTg5"
+  },
+  {
+    name: "Farmacia Santa Gemma",
+    poster: "../assets/sponsors/farmacia-santa-gemma.jpeg",
+    url: "https://www.instagram.com/farmaciasantagemma26?igsi=MTRjc2NmbTJ3ZnlvYw=="
+  },
+  {
+    name: "Bar Tabacchi La Villetta",
+    poster: "../assets/sponsors/bar-tabacchi-la-villetta.jpeg",
+    url: "https://www.instagram.com/farmaciasantagemma26?igsi=MTRjc2NmbTJ3ZnlvYw=="
+  },
+  {
+    name: "Trading Cafè",
+    poster: "../assets/sponsors/trading-cafe.jpeg",
+    url: "https://www.instagram.com/trading.cafee?igsi=MWJ0bGIwbWt3aXkyNw=="
+  },
+  {
+    name: "Elettrica Francesco Cozza",
+    poster: "../assets/sponsors/elettrica-francesco-cozza.jpeg",
+    url: ""
+  },
+  {
+    name: "Armazem Outlet",
+    poster: "../assets/sponsors/armazem.jpeg",
+    url: "https://www.instagram.com/armazem_outlet_?igsi=MXJwMTcyMThkZ3NlMQ=="
+  },
+  {
+    name: "AXA SEA Consulting",
+    poster: "../assets/sponsors/axa-sea-consulting.jpeg",
+    url: ""
+  },
+  {
+    name: "A Testa Alta",
+    poster: "../assets/sponsors/a-testa-alta.jpeg",
+    url: "https://www.instagram.com/a_testaalta_?igsi=MWYxaW5lZzI2YnZpOQ=="
+  },
+  {
+    name: "ASD Sporting Eleven",
+    poster: "../assets/sponsors/asd-sporting-eleven.jpeg",
+    url: "https://www.instagram.com/a_testaalta_?igsi=MWYxaW5lZzI2YnZpOQ=="
+  },
+  {
+    name: "Queen Events",
+    poster: "../assets/sponsors/queen-events.jpeg",
+    url: "https://www.instagram.com/__queen_events?igsi=MWswa2VoYXczN3k1cg=="
+  },
+  {
+    name: "Baby Dance",
+    poster: "../assets/sponsors/baby-dance.jpeg",
+    url: "https://www.instagram.com/baby_dance_animation?igsi=bHFlYTc3OTc2ZXl5"
+  },
+  {
+    name: "Laboratorio BIOS Analisi Cliniche",
+    poster: "../assets/sponsors/bios.jpeg",
+    url: "https://www.instagram.com/bios_cosenza?igsi=MXRncm43NTEwZWdtNw=="
+  },
+  {
+    name: "Auto Style",
+    poster: "../assets/sponsors/auto-style.jpeg",
+    url: "https://www.instagram.com/autostyle_cosenza?igsi=MXc3ZXJ2a2wyY2w1dA=="
+  },
+  {
+    name: "Dott. Litrenta Marco Natale",
+    poster: "../assets/sponsors/dott-litrenta-marco-natale.jpeg",
+    url: ""
+  },
+  {
+    name: "Giovanni Perri",
+    poster: "../assets/sponsors/giovanni-perri.jpeg",
+    url: "https://www.instagram.com/giovanniperri__?igsi=YmxuczFsdDZ3emU1"
+  },
+  {
+    name: "Dance Fusion",
+    poster: "../assets/sponsors/dance-fusion.jpeg",
+    url: "https://www.instagram.com/_dancefusion_?igsi=MW84a3prenJtdm1heA=="
+  }];
 
 (function renderSponsors() {
   'use strict';
