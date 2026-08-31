@@ -1,6 +1,6 @@
 LAPPANO IN PASSERELLA 2026 — aggiornamento sponsor
 
-Questa versione contiene 42 attività/partner complessivi (23 già presenti + 19 nuovi).
+Questa versione contiene 43 attività/partner complessivi, con iMARCOs in prima posizione e Tessuti Margherita aggiunto come ultimo sponsor.
 
 Per pubblicare:
 1. Aprire il repository GitHub imarcos-site.

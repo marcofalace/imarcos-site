@@ -1,5 +1,10 @@
 window.LAPPANO_SPONSORS = [
   {
+    name: "iMARCOs",
+    poster: "../assets/sponsors/imarcos.png",
+    url: "https://www.instagram.com/imarcos.sport/"
+  },
+  {
     name: "Centro Moda Mustica",
     poster: "../assets/sponsors/centro-moda-mustica.png",
     url: "https://www.instagram.com/centro_moda_mustica/"
@@ -23,11 +28,6 @@ window.LAPPANO_SPONSORS = [
     name: "Oriental Shop",
     poster: "../assets/sponsors/oriental-shop.png",
     url: "https://www.instagram.com/orientalshoprende/"
-  },
-  {
-    name: "iMARCOs",
-    poster: "../assets/sponsors/imarcos.png",
-    url: "https://www.instagram.com/imarcos.sport/"
   },
   {
     name: "Cantine Iusi",
@@ -209,6 +209,11 @@ window.LAPPANO_SPONSORS = [
     name: "Dance Fusion",
     poster: "../assets/sponsors/dance-fusion.jpeg",
     url: "https://www.instagram.com/_dancefusion_?igsi=MW84a3prenJtdm1heA=="
+  },
+  {
+    name: "Tessuti Margherita",
+    poster: "../assets/sponsors/tessuti-margherita.jpeg",
+    url: ""
   }];
 
 (function renderSponsors() {
