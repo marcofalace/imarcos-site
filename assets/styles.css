@@ -77,6 +77,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .nav-link:hover, .nav-link:focus-visible { border-color: currentColor; }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .hero {
   color: #fff;
   background:
@@ -292,6 +298,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-logo-card { max-width: 660px; transform: none; }
   .poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .promo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 560px) {
@@ -301,7 +308,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .event-facts { display: grid; }
   .event-facts li { border-radius: 14px; }
   .poster-grid { grid-template-columns: 1fr; }
-  .poster-meta { padding: 1rem; }
+  .promo-grid { grid-template-columns: 1fr; }
+  .poster-meta, .promo-meta { padding: 1rem; }
+  .nav-links { gap: .7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -323,4 +332,56 @@ button, a { -webkit-tap-highlight-color: transparent; }
   text-align: center;
   font-size: .92rem;
   font-weight: 700;
+}
+
+
+.promo-section {
+  background:
+    radial-gradient(circle at 88% 15%, rgba(185,122,63,.16), transparent 24rem),
+    linear-gradient(180deg, #fffaf4 0%, #f8f0e7 100%);
+  border-top: 1px solid var(--line);
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.7rem);
+  margin-top: 2.3rem;
+}
+
+.promo-card {
+  min-width: 0;
+  overflow: hidden;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(185,122,63,.24);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.promo-poster {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+}
+
+.promo-poster img {
+  width: 100%;
+  height: auto;
+  max-height: 760px;
+  object-fit: contain;
+  object-position: top center;
+  margin: 0 auto;
+}
+
+.promo-meta {
+  display: grid;
+  gap: .85rem;
+  padding: 1.15rem;
+  border-top: 1px solid rgba(23,18,20,.08);
+}
+
+.promo-meta h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
