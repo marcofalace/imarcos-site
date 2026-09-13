@@ -3,12 +3,187 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="theme-color" content="#ffffff">
-  <title>imarcos.it</title>
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="Sito istituzionale di ASD iMARCOs, associazione sportiva dilettantistica con sede a Castrolibero (CS).">
+  <title>iMARCOs | Associazione Sportiva Dilettantistica</title>
   <style>
-    html, body { width: 100%; min-height: 100%; margin: 0; background: #fff; }
+    :root {
+      --ink: #151515;
+      --muted: #6b6b6b;
+      --line: #deded9;
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --accent: #111111;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      width: min(920px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 72px 0 56px;
+    }
+    .brand {
+      margin: 0 0 10px;
+      font-size: clamp(46px, 9vw, 86px);
+      line-height: .92;
+      letter-spacing: -0.055em;
+      font-weight: 800;
+    }
+    .eyebrow {
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .intro {
+      margin: 54px 0 42px;
+      max-width: 760px;
+      font-size: clamp(20px, 3vw, 27px);
+      line-height: 1.42;
+      letter-spacing: -0.015em;
+    }
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin: 0 0 34px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+    }
+    .card h2 {
+      margin: 0 0 18px;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    dl { margin: 0; }
+    .row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 12px;
+      padding: 9px 0;
+      border-top: 1px solid #ecece8;
+    }
+    .row:first-child { border-top: 0; padding-top: 0; }
+    dt { color: var(--muted); font-size: 14px; }
+    dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+    a {
+      color: var(--ink);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .socials a {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      main { padding-top: 46px; }
+      .intro { margin-top: 38px; }
+      .grid { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; gap: 2px; }
+      .card { padding: 22px; }
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "ASD iMARCOs",
+    "alternateName": "iMARCOs",
+    "url": "https://imarcos.it/",
+    "email": "tesseramento.imarcos@gmail.com",
+    "telephone": "+393405310315",
+    "taxID": "98084770787",
+    "vatID": "IT03904220781",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Rusoli 45",
+      "postalCode": "87040",
+      "addressLocality": "Castrolibero",
+      "addressRegion": "CS",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://www.instagram.com/imarcos.sport/",
+      "https://www.facebook.com/imarcos.sport/"
+    ]
+  }
+  </script>
 </head>
-<body aria-hidden="true"></body>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Associazione Sportiva Dilettantistica</p>
+      <h1 class="brand">iMARCOs</h1>
+    </header>
+
+    <p class="intro">
+      iMARCOs promuove e organizza attività sportive, competizioni, eventi e iniziative orientate alla partecipazione, alla socialità e alla valorizzazione dello sport sul territorio.
+    </p>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <section class="grid" aria-label="Informazioni istituzionali e contatti">
+      <div class="card">
+        <h2>Informazioni istituzionali</h2>
+        <dl>
+          <div class="row"><dt>Ragione sociale</dt><dd>ASD iMARCOs</dd></div>
+          <div class="row"><dt>Sede</dt><dd>Via Rusoli 45, 87040 Castrolibero (CS), Italia</dd></div>
+          <div class="row"><dt>Codice fiscale</dt><dd>98084770787</dd></div>
+          <div class="row"><dt>Partita IVA</dt><dd>03904220781</dd></div>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h2>Contatti</h2>
+        <dl>
+          <div class="row"><dt>Email</dt><dd><a href="mailto:tesseramento.imarcos@gmail.com">tesseramento.imarcos@gmail.com</a></dd></div>
+          <div class="row"><dt>Telefono</dt><dd><a href="tel:+393405310315">+39 340 5310315</a></dd></div>
+        </dl>
+        <div class="socials" aria-label="Social media">
+          <a href="https://www.instagram.com/imarcos.sport/" target="_blank" rel="noopener noreferrer">Instagram · @imarcos.sport</a>
+          <a href="https://www.facebook.com/imarcos.sport/" target="_blank" rel="noopener noreferrer">Facebook · imarcos.sport</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 ASD iMARCOs</p>
+    </footer>
+  </main>
+</body>
 </html>
